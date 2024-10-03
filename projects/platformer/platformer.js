@@ -42,7 +42,8 @@ createPlatform(0,250,400,5)
 createPlatform(450,0,5,400)
 createPlatform(50,400,405,5)
 createPlatform(350,400,5,250)
-    
+createPlatform()
+//todo Helpers.js crouch jump 
     // TODO 2
     // Create collectables
     // You must decide on the collectable type, the x position, the y position, the gravity, and the bounce strength
