@@ -674,11 +674,18 @@ function keyboardControlActions() {
   }
   if (keyPress.space || keyPress.up) {
     if (player.onGround) {
-      //this only lets you jump if you are on the ground
+      if(currentAnimationType = animationTypes.duck || keypress.down) {
+        player.speedY = player.speedY - playerJumpStrength;
+        jumpTimer = 100; //this counts how many frames to have the jump last.
+        player.onGround = false; //bug fix for jump animation, you have to change this or the jump animation doesn't work
+        frameIndex = 4;
+      } else { 
+        //this only lets you jump if you are on the ground
       player.speedY = player.speedY - playerJumpStrength;
       jumpTimer = 19; //this counts how many frames to have the jump last.
       player.onGround = false; //bug fix for jump animation, you have to change this or the jump animation doesn't work
       frameIndex = 4;
+      }
     }
   }
 }
